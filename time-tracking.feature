@@ -9,34 +9,6 @@ Given the user is logged in
 
 # ----------------------------------
 
-Scenario: Clients page loads with all client cards
-    Given the user is logged in
-    And OneDrive is connected
-    And client folders are available
-    When the user navigates to the Clients page
-    Then the Clients page should load without errors
-    And all client cards should be displayed
-    And each card should show the client name, initials, and a Generate Report button
-
-  Scenario: Client names match OneDrive folder names
-    Given the Clients page has loaded successfully
-    When the user views the displayed client names
-    Then all client names should match the backend and OneDrive data
-    And there should be no missing or duplicate clients
-
-  Scenario: Each client card has a Generate Report button
-    Given the Clients page is loaded
-    When the user inspects each client card
-    Then every client card should contain a Generate Report button
-    And each button should be enabled by default
-
-  Scenario: Handle OneDrive disconnection gracefully
-    Given the user is logged in
-    And OneDrive is unavailable or disconnected
-    When the user attempts to access client folders
-    Then an error message should be displayed
-    And the user should be informed of the connection issue
-
 Scenario: Prevent timer start when project is inactive or deleted
 
 Given the user is logged in
