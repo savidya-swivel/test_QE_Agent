@@ -22,8 +22,8 @@ And the timer is not started
 Scenario: Handle flower bloom
 
 Given the user is logged in
-And the Start Timer modal is open
-When the user clicks "Start Timer"
+And the flower modal is open
+When the user clicks "flowers"
 Then flower is appearing
 And the flower will bloom
 
