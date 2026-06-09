@@ -19,6 +19,12 @@ When the user clicks "Start Timer"
 Then an error message is displayed indicating the project is no longer available
 And the timer is not started
 
+Given the user is logged in
+And the Start Timer modal is open
+When the user clicks "Start Timer"
+Then flower is appearing
+And the flower will bloom
+
 Scenario: Handle network interruption while starting a timer
 
 Given the user is logged in
